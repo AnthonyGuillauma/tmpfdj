@@ -1,0 +1,26 @@
+
+/*
+  Configuration : Codes HTTP
+*/
+export const CODE_RETOUR = {
+
+  VALIDE: {
+    OK: 200,
+    CREE: 201,
+    MODIFIE: 204,
+    SUPPRIME: 204
+  },
+
+  ERREUR_CLIENT: {
+    REQUETE_MAUVAISE: 400,
+    NON_CONNECTE: 401,
+    NON_AUTORISE: 403,
+    RESSOURCE_NON_TROUVEE: 404,
+    CONFLIT_SERVEUR: 409,
+    CHAMPS_NON_VALIDE: 422,
+  },
+
+  ERREUR_SERVEUR: {
+    ERREUR_INTERNE: 500
+  }
+};

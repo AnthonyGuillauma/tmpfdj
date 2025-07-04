@@ -1,0 +1,18 @@
+<h1 class="titre-page">Ajouter un canal</h1>
+
+<form [formGroup]="formulaireAjout" (ngSubmit)="ajouter()" class="formulaire-canal">
+    <div class="champ-formulaire">
+        <label for="canal-modification-nom">Nom</label>
+        <input id="canal-modification-nom" type="text" formControlName="nom" required />
+    </div>
+    <div class="champ-formulaire">
+        <label for="visibilite">Visibilité</label>
+        <select id="visibilite" formControlName="visibilite">
+            <option value="public">Public</option>
+            <option value="prive">Privé</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn-soumettre">Ajouter</button>
+    <label #erreur class="erreur-formulaire"></label>
+</form>

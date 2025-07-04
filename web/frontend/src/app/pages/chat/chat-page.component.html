@@ -1,0 +1,17 @@
+<div class="campfire-chat-container">
+    <div class="message-list" #listeMessages (scroll)="scrollMessages()">
+      <div class="message" *ngFor="let message of suiviMessages | async">
+        <div class="meta">
+          <span class="auteur">{{ message.auteur }}</span>
+          <span class="date">{{ message.date_envoi | date:'short' }}</span>
+        </div>
+        <div class="contenu">{{ message.contenu }}</div>
+      </div>
+    </div>
+  
+    <div class="zone-envoi">
+      <input id="champs-nouveau-message" #nouveauMessage type="text" placeholder="Un message autour du feu..." />
+      <button (click)="envoyerMessage()">🔥 Envoyer</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,19 @@
+<h1>Mon compte</h1>
+
+<h3>Email: {{session.email}}</h3>
+<h3>Pseudo: {{session.pseudo}}</h3>
+
+<h3>Mes canaux</h3>
+<button id="bouton-ajouter-canal" (click)="ouvreAjoutCanal()">Ajouter</button>
+<div class="liste-canaux">
+    <div class="carte-canal" *ngFor="let canal of canaux | async">
+        <div class="nom-canal">{{ canal.nom }}</div>
+        <div class="info-canal">Propriétaire : {{ canal.proprietaire }}</div>
+        <div class="info-canal">Visibilité : {{ canal.visibilite }}</div>
+        <div class="boutons-canal">
+            <button (click)="ouvreCanal(canal.id)">Ouvrir</button>
+            <button (click)="ouvreModificationCanal(canal.id)">Modifier</button>
+            <button (click)="supprimerCanal(canal.id)">Supprimer</button>
+        </div>
+    </div>
+</div>

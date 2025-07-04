@@ -1,0 +1,62 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: feudejoie_mongodb
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: feudejoie
+      MONGO_INITDB_ROOT_PASSWORD: feudejoiemotdepasse
+    volumes:
+      - mongodb-data:/data/db
+      - /init-mongodb.js:/docker-entrypoint-initdb.d
+    networks:
+      - feudejoie
+  
+  redis:
+    image: redis:latest
+    container_name: feudejoie_redis
+    ports:
+      - 6379:6379
+    networks:
+      - feudejoie
+
+  web:
+    build:
+      context: ./web
+    container_name: feudejoie_web
+    ports:
+      - 8080:80
+
+  utilisateurs:
+    build:
+      context: ./utilisateurs
+    container_name: feudejoie_utilisateurs
+    ports:
+      - 8081:80
+    networks:
+      - feudejoie
+
+  canaux:
+    build:
+      context: ./canaux
+    container_name: feudejoie_canaux
+    ports:
+      - 8082:80
+    networks:
+      - feudejoie
+
+  chats:
+    build:
+      context: ./chats
+    container_name: feudejoie_chats
+    ports:
+      - 8083:80
+    networks:
+      - feudejoie
+
+volumes:
+  mongodb-data:
+
+networks:
+  feudejoie:

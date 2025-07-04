@@ -1,0 +1,14 @@
+{
+  "name": "feudejoie_web",
+  "version": "0.1.0",
+  "description": "Gestion web de FeuDeJoie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anthony GUILLAUMA",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

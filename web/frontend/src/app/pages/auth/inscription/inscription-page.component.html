@@ -1,0 +1,22 @@
+<h1 class="titre-page">Inscription</h1>
+
+<form [formGroup]="formulaireInscription" (ngSubmit)="inscription()" class="formulaire-canal">
+    <div class="champ-formulaire">
+        <label for="inscription-email">Email</label>
+        <input id="inscription-email" type="email" formControlName="email" required />
+    </div>
+
+    <div class="champ-formulaire">
+        <label for="inscription-pseudo">Pseudo</label>
+        <input id="inscription-pseudo" type="password" formControlName="pseudo" required />
+    </div>
+
+    <div class="champ-formulaire">
+        <label for="inscription-mot-de-passe">Mot de passe</label>
+        <input id="inscription-mot-de-passe" type="password" formControlName="motDePasse" required />
+    </div>
+
+    <input type="submit" class="btn-soumettre" [disabled]="!this.formulaireInscription.valid" />
+    <label #erreur class="erreur-formulaire"></label>
+
+</form>

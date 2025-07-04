@@ -1,0 +1,66 @@
+.titre-page {
+    font-size: 2rem;
+    color: #ffcc80;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.formulaire-canal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #3e2723;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
+}
+
+.champ-formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-weight: bold;
+        color: #ffe0b2;
+    }
+
+    input,
+    select {
+        padding: 0.6rem;
+        border-radius: 6px;
+        border: none;
+        background-color: #5d4037;
+        color: #fff5e6;
+        font-size: 1rem;
+
+        &:focus {
+            outline: 2px solid #ff5722;
+        }
+    }
+}
+
+.btn-soumettre {
+    background-color: #ff5722;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    align-self: flex-start;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #e64a19;
+    }
+}
+
+.erreur-formulaire {
+    color: #ffab91;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}

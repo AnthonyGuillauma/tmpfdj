@@ -1,0 +1,19 @@
+<img src="imgs/logo.png" />
+<h1 class="titre-accueil">🔥 Bienvenue autour du feu</h1>
+<p class="sous-titre-accueil">
+    Allume une bougie et connecte toi.<br />
+    Rejoins un canal ou crée le tien pour rallumer la conversation.
+</p>
+
+<div class="actions">
+    <div class="actions" *ngIf="estConnecte$ | async; then connecte; else deconnecte"></div>
+</div>
+
+<ng-template #connecte>
+    <a routerLink="/canaux" class="btn-accueil">Explorer les canaux</a>
+    <a routerLink="/compte" class="btn-accueil secondaire">Compte</a>
+</ng-template>
+<ng-template #deconnecte>
+    <a routerLink="/connexion" class="btn-accueil">Connexion</a>
+    <a routerLink="/inscription" class="btn-accueil secondaire">Inscription</a>
+</ng-template>

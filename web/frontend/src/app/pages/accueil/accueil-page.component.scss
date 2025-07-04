@@ -1,0 +1,66 @@
+h1 {
+    text-align: center;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: radial-gradient(circle at center, #7b2b0c 0%, #0e0805 100%);
+    color: #ffe0b2;
+    text-align: center;
+}
+
+img {
+    width: 40%;
+}
+
+.titre-accueil {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffcc80;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.sous-titre-accueil {
+    font-size: 1.2rem;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #ffe0b2;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-accueil {
+    text-decoration: none;
+    background-color: #ff5722;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+        background-color: #e64a19;
+        transform: scale(1.05);
+    }
+
+    &.secondaire {
+        background-color: transparent;
+        border: 2px solid #ff5722;
+        color: #ffcc80;
+
+        &:hover {
+            background-color: rgba(255, 87, 34, 0.2);
+        }
+    }
+}

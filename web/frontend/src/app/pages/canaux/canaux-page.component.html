@@ -1,0 +1,20 @@
+<h1>Canaux</h1>
+
+<h2 class="sous-titre">Vos inscriptions :</h2>
+<div class="liste-canaux">
+    <div class="carte-canal" [id]="'canal-' + canal.id" *ngFor="let canal of canauxInscrit">
+        <div class="nom-canal">{{ canal.nom }}</div>
+        <div class="info-canal">Propriétaire : {{ canal.proprietaire }}</div>
+        <div class="info-canal">Visibilité : {{ canal.visibilite }}</div>
+        <button (click)="ouvreCanal(canal.id)">Ouvrir</button>
+    </div>
+</div>
+
+<h2 class="sous-titre">Canaux disponibles :</h2>
+<div class="liste-canaux">
+    <div class="carte-canal" [id]="'canal-' + canal.id" *ngFor="let canal of canauxPublics">
+        <div class="nom-canal">{{ canal.nom }}</div>
+        <div class="proprietaire-canal">Propriétaire : {{ canal.proprietaire }}</div>
+        <button (click)="rejoindreCanal(canal.id)">Rejoindre</button>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<a id="bouton-menu" #boutonMenu (click)="basculerMenu()">Fermer</a>
+<div id="contenu-menu">
+    <img id="logo" src="imgs/logo.png"/>
+    <div class="menu">
+        <a routerLink="/">Accueil</a>
+        <div *ngIf="estConnecte$ | async; then connecte; else deconnecte"></div>
+        <ng-template #connecte>
+            <a routerLink="/canaux">Canaux</a>
+            <a routerLink="/compte">Compte</a>
+            <a (click)="deconnexion()">Deconnexion</a>
+            <span class="titre-menu">Canaux</span>
+            <div id="raccourcis-canaux-inscrit" class="menu">
+                <div class="canal" (click)="ouvreCanal(canal.id)" *ngFor="let canal of canauxInscrit$ | async">
+                    <span class="nom-canal">{{canal.nom}}</span>
+                    <span class="nb-non-lu">{{gestionnaireMessages.getMessagesCanal(canal.id).nombreMessageNonLu$ | async}}</span>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #deconnecte>
+            <a routerLink="/connexion">Connexion</a>
+            <a routerLink="/inscription">Inscription</a>
+        </ng-template>
+    </div>
+</div>

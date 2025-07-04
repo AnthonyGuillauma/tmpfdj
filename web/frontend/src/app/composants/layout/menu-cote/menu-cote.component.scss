@@ -1,0 +1,115 @@
+:host {
+    width: 0%;
+    background: linear-gradient(to bottom, #3e2723, #1b0f0a);
+    transition: width 0.5s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+
+    * {
+        display: none;
+        text-align: center;
+    }
+}
+
+#logo {
+    width: 100%;
+}
+
+:host.menu-ouvert {
+    margin-right: 1%;
+    width: 14%;
+    height: 100%;
+
+    * {
+        display: block;
+    }
+}
+
+a {
+    color: #ffe0b2;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+
+    &:hover {
+        background-color: rgba(255, 140, 0, 0.2);
+    }
+}
+
+#bouton-menu {
+    position: fixed;
+    display: block;
+    top: 0%;
+    left: 1%;
+    display: inline-block;
+    background-color: #6b3e26; // bois foncé
+    color: #fff5e6;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #a0522d; // bois plus clair
+    }
+}
+
+#contenu-menu {
+    margin-top: 5vh;
+    color: #fbe9e7;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.titre-menu {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffcc80; // couleur feu
+
+    &.secondaire {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        color: #ffb74d;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    padding-top: 10px;
+    width: 100%;
+    border-top: solid black;
+}
+
+#raccourcis-canaux-inscrit {
+    margin-top: 0.5rem;
+
+    .canal {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.4rem 0.6rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+            background-color: rgba(255, 152, 0, 0.1);
+        }
+
+        .nom-canal {
+            font-weight: 500;
+        }
+
+        .nb-non-lu {
+            background-color: #ff5722;
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 12px;
+        }
+    }
+}

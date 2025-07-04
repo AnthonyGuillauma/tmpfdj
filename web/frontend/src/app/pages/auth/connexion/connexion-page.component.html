@@ -1,0 +1,17 @@
+<h1 class="titre-page">Connexion</h1>
+
+<form [formGroup]="formulaireConnexion" (ngSubmit)="connexion()" class="formulaire-canal">
+    <div class="champ-formulaire">
+        <label for="connexion-email">Email</label>
+        <input id="connexion-email" type="email" formControlName="email" required />
+    </div>
+
+    <div class="champ-formulaire">
+        <label for="connexion-mot-de-passe">Mot de passe</label>
+        <input id="connexion-mot-de-passe" type="password" formControlName="motDePasse" required />
+    </div>
+
+    <input type="submit" class="btn-soumettre" [disabled]="!this.formulaireConnexion.valid" />
+    <label #erreur class="erreur-formulaire"></label>
+
+</form>
